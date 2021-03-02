@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row mtn-30">
                 <!-- single item start -->
-                <div v-for="(about, abouts) in abouts" :key="abouts" class="col-lg-3 col-md-6">
+                <div v-for="(about, abouts) in abouts" :key="abouts" class="col-lg-3 col-md-6 item">
                     <div class="about-item">
                         <div class="about-icon">
                             <i :class="about.icon"></i>
@@ -28,26 +28,13 @@ export default {
     data (){
         return {
              abouts:[
-                { 
-                    title: "SELL", 
-                    desc: "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.", 
-                    icon: "fa fa-pagelines"
-                },
+
                 {
-                    title: "GAME", 
-                    desc: "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.", 
-                    icon: "fa fa-laptop"
+                    title: "Lets Play Mafia", 
+                    desc: "Hipster LLamas current project. A fresh take on the Classic game of Mafia", 
+                    icon: "fa fa-gamepad"
                 },
-                {
-                    title: "SMART", 
-                    desc: "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.", 
-                    icon: "fa fa-apple"
-                },
-                {
-                    title: "UNIQUE DESIGN", 
-                    desc: "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet.", 
-                    icon: "fa fa-paint-brush"
-                }
+ 
             ]
         }
     }
@@ -57,4 +44,13 @@ export default {
 <style lang="scss">
     @import '../assets/scss/variables.scss';
     @import '../assets/scss/components/about.scss';
+    .row {
+        justify-content: center;
+    }
+    p {
+        color:white !important;
+    }
+    .about-content h6 {
+        color: rgb(128, 32, 32) !important;
+    }
 </style>

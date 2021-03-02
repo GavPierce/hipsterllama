@@ -21,11 +21,6 @@ export const routes = [
     },
     {
         path:'/',
-        name: 'Home_three',
-        component: Home_one
-    },
-    {
-        path:'/home-two',
         name: 'Home_two',
         component: Home_two
     },
