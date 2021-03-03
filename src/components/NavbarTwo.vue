@@ -10,16 +10,13 @@
               </a>
             </div>
             <div class="switch_wrapper">
-              <i
-                class="fa fa-fire"
-                :class="{ fire_active: this.$store.state.switch }"
-              ></i>
+              <i class="fa fa-fire" :class="{ fire_active: !cool }"></i>
 
               <label class="switch">
                 <input type="checkbox" @click="on" />
                 <span class="slider round"></span>
               </label>
-              <i class="fa fa-bolt"></i>
+              <i class="fa fa-bolt" :class="{ lighting_active: cool }"></i>
             </div>
 
             <div id="hamburger" v-on:click="display_menu()">
@@ -27,13 +24,13 @@
               <span></span>
               <span></span>
             </div>
-            <ul class="main-menu main-menu__style-2">
-              <li>
+            <ul class="main-menu main-menu__style-2" :class="{ white: cool }">
+              <li :class="{ white: cool }">
                 <a v-on:click="close_menu()" href="#home" class="activee"
                   >Home</a
                 >
               </li>
-              <li><a v-on:click="close_menu()" href="#about">About</a></li>
+              <li><a v-on:click="close_menu()" href="#about">Projects</a></li>
               <li><a v-on:click="close_menu()" href="#review">Team</a></li>
             </ul>
           </div>
@@ -48,6 +45,7 @@ export default {
   name: "Navbar",
   data() {
     return {
+      cool: false,
       load: false,
       limitPosition: 200,
       scrolled: false,
@@ -57,6 +55,7 @@ export default {
   methods: {
     // responsive menu script
     on() {
+      this.cool = !this.cool;
       this.$emit("switchCool");
     },
     display_menu: function() {
@@ -180,6 +179,11 @@ export default {
 img {
   max-width: fit-content;
 }
+.white {
+  a {
+    color: rgb(18, 178, 241) !important;
+  }
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -188,6 +192,9 @@ img {
 }
 .fire_active {
   color: orange;
+}
+.lighting_active {
+  color: yellow;
 }
 /* Hide default HTML checkbox */
 .switch input {
