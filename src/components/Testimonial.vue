@@ -60,7 +60,7 @@ export default {
       },
       clients: [
         {
-          clientThumb: require("../assets/img/testimonial/joshua_bowen.png"),
+          clientThumb: require("../assets/img/testimonial/joshua.png"),
           name: "Joshua Bowen",
           designation: "CEO",
           desc: "Joshua Bowen Comes up with the lightbulb ideas",
